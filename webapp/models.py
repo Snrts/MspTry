@@ -20,16 +20,5 @@ class User(db.Model, UserMixin): #lets us inherit from both #using uppercase is 
     lastname= db.Column(db.String(150))
     select = db.relationship('Note') #tells flask and SQLalchemy to add the courses to a users account (adds a list to the user)
 
-class Course(db.Model):
-    code = db.Column(db.String(3))
-    nr = db.Column(db.Integer)
-    tag_label = db.Column(db.String(2), db.ForeignKey('tag.label'))
-    tag_period= db.Column(db.String(2), db.ForeignKey('tag.period'))
 
-    def __init__(self, code, nr):
-        self.id = code+nr
-
-class Tag(db.Model):
-    period = db.Column(db.Integer, primary_key=True)
-    label = db.relationship('Course')
     
