@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> {%block title%}Home{%endblock%} </title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='profile.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='cards.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='collapse.css' )}}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='Selection.css') }}"/>
+    
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                width: 100%;
+            }
+            @font-face {
+                font-family: new;
+                src: url(../static/fonts/Lato-Regular.ttf);
+            }
+            *{
+                font-family: new;
+            }
+             
+            .searchbut {
+                background: url(../static/images/search.svg);
+                background-size: cover;
+            }
+            
+            .profile {
+                background: url(../static/images/prof.svg);
+                background-size: cover;
+            }
+            .home{
+                background: url(../static/images/home.svg);
+                background-size: cover;
+
+            }
+            .logout{
+                background: url(../static/images/logout.svg);
+                background-size: cover;
+
+            }
+        </style>
+    </head>
+        <body>
+            <header>
+                <div class="logo">
+                    THE MSP EXPERIENCE
+                </div>
+                <input type="text" class="search" placeholder="Search">
+                <div class="icons">
+                        
+                        <button class="icon searchbut" title="search"></button>
+                    
+                        <a class="icon home" href="/" title="home"></a>
+                        {% if user.is_authenticated %}
+                    
+                        
+                        <button class="icon profile" title="profile"></button>
+                        <div class="shoppingprofile">
+                            <h2>Logged in:</h2>
+                            <a>First Name: {{ user.firstname }}</a><br>
+                            <a>Last Name: {{ user.lastname }}</a><br>
+                            <a>E-mail: {{ user.email }}</a><br>
+                            <a>Id: {{ user.id }}</a><br>
+                            <div class="leave">
+                                <label for="log out">
+                                    Log Out
+                                </label> 
+                                <a class="icon logout" title="log out" href="/logout"></a>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <button class="icon trigger" title="menu">
+                            <div class="bar1"></div>
+                            <div class="bar2"></div>
+                            <div class="bar3"></div>
+                        </button>
+                            <script>
+                            let searchButton = document.querySelector('.searchbut');
+                            let menuButton = document.querySelector('.trigger');
+                            let profileButton = document.querySelector('.profile')
+                            let header = document.querySelector('header');
+                            let body = document.querySelector('body')
+
+                            let searchActive = () => {
+                                header.classList.toggle('active');
+                            };
+                            searchButton.addEventListener('click', searchActive)
+                            let menuActive = () => {
+                                body.classList.toggle('change');
+                            };
+                            menuButton.addEventListener('click', menuActive)
+
+                            let unfoldprofile = () => {
+                                body.classList.toggle('open')
+                            }
+                            profileButton.addEventListener('click', unfoldprofile)
+                        </script>
+                    
+                </div>
+                
+                
+                        
+            <div class="list">
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+            </div>
+        </header>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                        {% if category == 'error' %}
+                        <div class="alert error" role="alert">
+                            {{ message }}
+                            <button title="close" type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% else %}
+                        <div class="alert succes" role="alert">
+                            {{ message }}
+                            <button title="close" type="button" class="close" data-dismiss="alert">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        {% endwith %}
+                        <script>
+                        
+                            let alertButton = document.querySelector('.close')
+                            let alert = document.querySelector('body')
+                
+                            let closeActive = () => {
+                                alert.classList.toggle('dismiss');
+                            };
+                            alertButton.addEventListener('click', closeActive)
+                        </script>
+                    
+    
+        {% block content %} {% endblock %}
+       
+            <div class="footer">
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+                <div class="col">
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                    <a>bean</a>
+                </div>
+                <p>&copy; 2022 COPYRIGHT MAASTRICHT SCIENCE PROGRAMME</p>
+            </div>
+        </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends "base.html"%}{%block title%}Selection{%endblock%}
+        {%block content%}
+        <form method="POST" class="selection">
+
+            <h1>Current Selection</h1>
+            <div>
+            {% for course in user.select %}
+            <div class="column"><a>{{ course.course1 }}</a></div>
+            <div class="colimn"><a>{{ course.course2 }}</a></div>
+            <div class="column"><a>{{ course.skill }}</a></div>
+            {% endfor %}</div>
+            
+            <label for="course1">label</label>
+            <select name="course1" title="course1">
+                <option>a</option>
+            </select>
+            <label for="course2">label</label>
+            <select name="course2" title="course2">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <label for="skill">label</label>
+            <select name="skill" title="skill">
+                <option>e</option>
+                <option>f</option>
+                <option>g</option>
+                <option>h</option>
+            </select>
+            <button type="submit">add</button>
+        </form>
+       {%endblock%}
+    
+</html>

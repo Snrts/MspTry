@@ -1,0 +1,29 @@
+
+@keyframes unfold {
+    from {height: 0px;}
+    to {height: 150pt;}
+    
+}
+.shoppingprofile {
+    position: absolute;
+    right: 0em;
+    top: 4em;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    width: 300pt;
+    height: 0pt ;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px
+}
+
+.shoppingprofile h2{
+    font-size: larger;
+}
+
+.open .shoppingprofile{
+    animation-name: unfold;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    padding: 1em;
+    line-height: 1.5em;
+}

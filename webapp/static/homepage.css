@@ -1,0 +1,147 @@
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+header {
+    height: 2em;
+    background-color: rgb(255, 255, 255);
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+
+body {
+    background: linear-gradient(
+        to right, rgb(174, 255, 179), hsl(27, 84%, 83%), rgb(159, 233, 255)
+    );
+    background-size: 400% 400%;
+    animation: animated-background 10s infinite ease-in-out;
+    padding: 0;
+  
+}
+@keyframes animated-background {
+    0%{
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+.logo{
+    position: absolute;
+    left: 2em;
+    top: 1.4em;
+}
+
+
+
+
+button.choose{
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    width: 50%;
+    min-width:auto ;
+    min-height: 70px;
+    border: 2pt;
+    color: #fff;
+    font-size: large;
+    border-color: #fff;
+    border-style: solid;
+    border-radius: 5px;
+    transition: transform 4s ease-in-out;
+}
+
+@keyframes click {
+    from {
+        width: 50%; 
+        min-height: 70px;
+        font-size: large;
+    }
+    to {
+        width: 55%; 
+        min-height: 80px;
+        font-size: larger;
+    }
+    
+}
+button.choose:hover{
+    color: rgb(255, 255, 255);
+    animation-name: click;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.change .block, .open .block{
+    margin-top: 200pt;
+}
+.block {
+    margin-top: 15pt;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.column{
+    display: inline-block;
+    width: 45%;
+    border-radius: 5pt;
+    padding: 10pt;
+    background-color: rgb(255, 255, 255);
+    text-align: justify;
+    
+}
+
+.column h1 {
+    justify-self: center;
+    font-size: large;
+}
+.column a{
+    font-size: small;
+}
+
+@media screen and (max-width:650px){
+    .block {
+        flex-direction: column;
+    }
+    .column{
+        display: block;
+        width: auto;
+        margin-left:5% ;
+        margin-right: 5%;
+        margin-top: 5pt;
+        height: 28pt;
+        overflow: hidden;
+    }
+    @keyframes open {
+        0%{
+            height: 28pt;
+        }
+        100%{
+            height: auto;
+        }
+        
+    }
+    .column:hover{
+        animation-name: open;
+        animation-duration: 1s;
+        animation-timing-function:ease-in-out;
+        animation-fill-mode: forwards;
+    }
+    button.choose{
+        width: 60%;
+    }
+    
+}

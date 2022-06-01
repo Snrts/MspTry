@@ -1,0 +1,139 @@
+.login{
+    background-color: #fff;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 3em;
+    width: 60%;
+    padding: 15pt;
+    text-align: center;
+    height: 35em;
+    border-radius: 15px;
+
+}
+::placeholder{
+    color: rgb(75, 75, 75);
+    font-weight: 500;
+}
+input[type=email], input[type=password], input[type=text]{
+    display: block;
+    border-radius: 5pt;
+    border-width: 0.05em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 80%;
+    padding: 8pt;
+    margin-top: 5pt;
+    margin-bottom: 5pt;
+    border: none;
+    background: linear-gradient(
+        to right, rgb(174, 255, 179), hsl(27, 84%, 83%), rgb(159, 233, 255)
+    );
+    background-size: 800% 800%;
+    animation: animated-background 10s infinite ease-in-out;
+}
+
+.submit {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-around;
+}
+input[type=submit], a#signup{
+    display: inline-block;
+    height: 3em;
+    text-decoration: none;
+    width: 12em;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(
+        to right, rgb(174, 255, 179), hsl(27, 84%, 83%), rgb(159, 233, 255)
+    );
+    background-size: 800% 800%;
+    animation: animated-background 10s infinite ease-in-out;
+  
+}
+
+
+.login h1{
+    display: block;
+    font-size: 25pt;
+}
+.login h2, .signup h2{
+    display: block;
+    font-size: 17pt;
+    font-weight: lighter;
+    line-height: 3pt;
+}
+label[for=email], label[for=password], label[for="First name"], label[for="Last Name"], label[for="password1"]{
+    display: block;
+    font-size: larger;
+    line-height: 3em;
+}
+
+
+.change .login, .open .login, .change .signup, .open .signup{
+    margin-top: 200pt;
+}
+
+.signup{
+    background-color: #fff;
+    margin-top: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+    width: 60%;
+    padding: 15pt;
+    text-align: center;
+    height: 50em;
+    border-radius: 15px;
+
+}
+
+.alert{
+    width: 100%;
+    font-size: medium;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+    height: 2em;
+}
+.succes {
+    background-color: rgb(181, 254, 181);
+}
+
+.error {
+    background-color: rgb(255, 182, 197);
+
+}
+
+button.close{
+    position: absolute;
+    right: 2em;
+    top: 1.4em;
+    border: none;
+    font-weight: bolder;
+    background-color: rgba(255, 255, 255, 0);
+    height: 3em;
+    width: 3em;
+    color: black;
+    font-size: xx-large;
+}
+
+.dismiss .alert{
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    padding: 0;
+}
+
+a .course{
+    display: block;
+}
+
+.leave{
+    position: absolute;
+    right: 1em;
+}

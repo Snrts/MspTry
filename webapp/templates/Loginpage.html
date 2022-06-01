@@ -1,0 +1,43 @@
+{% extends "base.html" %}{%block title%}Log-in{%endblock%}
+    {%block content%}
+    <div class="login">
+            <h1>LOGIN</h1>
+            <h2>PLEASE LOG IN</h2>
+                <form method="POST">
+                    
+                    <label for="email">E-mail address</label>
+                        <input 
+                        id="email"
+                        type="email" 
+                        placeholder="@student.maastrichtuniversity.nl" 
+                        name="email">
+                    <label for="password">Password</label>
+                        <input 
+                        id="password"
+                        type="password" 
+                        placeholder="Password" 
+                        name="password">
+                    
+                        <input 
+                        type="checkbox" 
+                        checked="checked" 
+                        name="Remember me" 
+                        placeholder="Remember me">
+                        <label for="Remember me" > Remember me</label>
+                        
+                        <div class="submit"><input 
+                        id="signin"
+                        type="submit" 
+                        placeholder="Sign in" 
+                        name="Sign in" 
+                        value="Sign In">
+                            
+                        <a id="signup" href="{{ url_for('auth.signup') }}">Sign-up</a>
+                        
+                          
+                
+                    
+                </form> 
+        </div>{%endblock%}
+        
+</html>

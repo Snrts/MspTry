@@ -1,0 +1,106 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    width: 100%;
+}
+
+.list{
+    top: 4em;
+    position: absolute;
+}
+
+@keyframes unfoldfoot {
+    from {height: 0px;}
+    to {height: auto;}  
+}
+
+.footer{
+    position: absolute;
+    display: block;
+    bottom: 0em;
+    margin-bottom: 0ch;
+    margin-top: 3em;
+    animation-name: unfoldfoot;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    padding: 1em;
+    padding-bottom: 0;
+}
+
+.list, .footer{
+    left: 0;
+    background-color: rgb(255, 251, 251);
+    padding: 0em;
+    border-bottom-left-radius: 5pt;
+    border-bottom-right-radius: 5pt;
+    height: 0px;
+    width: 100vw;
+    line-height: 21pt;
+    overflow: hidden;
+    flex-direction: row
+}
+.list .col, .footer .col{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+    height: 130pt;
+    flex-direction: column;
+    overflow: hidden;
+}
+.list .col a, .footer .col a{
+    display: block;
+   color: #333;
+   font-size: 15pt;
+   line-height: 2em;
+   letter-spacing: 0.2em;
+   text-decoration: none;
+}
+.list a:hover, .footer a:hover {
+    color: #333;
+    font-weight: bold;
+    padding-bottom: 0.2em;
+    text-decoration: underline #333 0.1em;
+}
+
+@keyframes unfold {
+    from {height: 0px;}
+    to {height: 150pt;}  
+}
+
+.change .list{
+    animation-name: unfold;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    padding: 1em;
+}
+
+
+.trigger {
+    display: inline-block;
+    transition: 0.5s;
+    border: none;
+    margin: 0.5em;
+    margin-top: 0 ;
+    background-color: rgb(255, 255, 255);
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 6px;
+    transition: 0.4s;
+  }
+.change .bar1{
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px) ;
+  }
+.change .bar2{
+    opacity: 0;
+  }
+.change .bar3{
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+

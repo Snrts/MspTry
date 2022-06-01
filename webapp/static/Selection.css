@@ -1,0 +1,27 @@
+form.selection{
+        background-color: #fff;
+        margin-top: 3em;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 3em;
+        width: 60%;
+        padding: 15pt;
+        text-align: center;
+        height: 50em;
+        border-radius: 15px;
+        justify-content: center;
+}
+
+select{
+    display: block;
+    height: 2em;
+    width: 10em;
+}
+.choice{
+    column-fill: balance;
+}
+.choice a{
+    display: inline-block;
+    font-size: small;
+    
+}
