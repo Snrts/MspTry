@@ -52,141 +52,144 @@
         </style>
     </head>
         <body>
-            <header>
-                <div class="logo">
-                    THE MSP EXPERIENCE
-                </div>
-                <input type="text" class="search" placeholder="Search">
-                <div class="icons">
-                        
-                        <button class="icon searchbut" title="search"></button>
-                    
-                        <a class="icon home" href="/" title="home"></a>
-                        {% if user.is_authenticated %}
-                    
-                        
-                        <button class="icon profile" title="profile"></button>
-                        <div class="shoppingprofile">
-                            <h2>Logged in:</h2>
-                            <a>First Name: {{ user.firstname }}</a><br>
-                            <a>Last Name: {{ user.lastname }}</a><br>
-                            <a>E-mail: {{ user.email }}</a><br>
-                            <a>Id: {{ user.id }}</a><br>
-                            <div class="leave">
-                                <label for="log out">
-                                    Log Out
-                                </label> 
-                                <a class="icon logout" title="log out" href="/logout"></a>
-                            </div>
+            <div id="page-container">
+                <div id="content-wrap">
+                    <header>
+                        <div class="logo">
+                            THE MSP EXPERIENCE
                         </div>
-                        {% endif %}
-                        <button class="icon trigger" title="menu">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
-                        </button>
-                            <script>
-                            let searchButton = document.querySelector('.searchbut');
-                            let menuButton = document.querySelector('.trigger');
-                            let profileButton = document.querySelector('.profile')
-                            let header = document.querySelector('header');
-                            let body = document.querySelector('body')
+                        <input type="text" class="search" placeholder="Search">
+                        <div class="icons">
+                                
+                                <button class="icon searchbut" title="search"></button>
+                            
+                                <a class="icon home" href="/" title="home"></a>
+                                {% if user.is_authenticated %}
+                            
+                                
+                                <button class="icon profile" title="profile"></button>
+                                <div class="shoppingprofile">
+                                    <h2>Logged in:</h2>
+                                    <a>First Name: {{ user.firstname }}</a><br>
+                                    <a>Last Name: {{ user.lastname }}</a><br>
+                                    <a>E-mail: {{ user.email }}</a><br>
+                                    <a>Id: {{ user.id }}</a><br>
+                                    <div class="leave">
+                                        <label for="log out">
+                                            Log Out
+                                        </label> 
+                                        <a class="icon logout" title="log out" href="/logout"></a>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <button class="icon trigger" title="menu">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
+                                </button>
+                                    <script>
+                                    let searchButton = document.querySelector('.searchbut');
+                                    let menuButton = document.querySelector('.trigger');
+                                    let profileButton = document.querySelector('.profile')
+                                    let header = document.querySelector('header');
+                                    let body = document.querySelector('body')
 
-                            let searchActive = () => {
-                                header.classList.toggle('active');
-                            };
-                            searchButton.addEventListener('click', searchActive)
-                            let menuActive = () => {
-                                body.classList.toggle('change');
-                            };
-                            menuButton.addEventListener('click', menuActive)
+                                    let searchActive = () => {
+                                        header.classList.toggle('active');
+                                    };
+                                    searchButton.addEventListener('click', searchActive)
+                                    let menuActive = () => {
+                                        body.classList.toggle('change');
+                                    };
+                                    menuButton.addEventListener('click', menuActive)
 
-                            let unfoldprofile = () => {
-                                body.classList.toggle('open')
-                            }
-                            profileButton.addEventListener('click', unfoldprofile)
-                        </script>
-                    
-                </div>
-                
-                
-                        
-            <div class="list">
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                </div>
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                </div>
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                </div>
-            </div>
-        </header>
-        {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                        {% if category == 'error' %}
-                        <div class="alert error" role="alert">
-                            {{ message }}
-                            <button title="close" type="button" class="close" data-dismiss="alert">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                                    let unfoldprofile = () => {
+                                        body.classList.toggle('open')
+                                    }
+                                    profileButton.addEventListener('click', unfoldprofile)
+                                </script>
+                            
                         </div>
-                        {% else %}
-                        <div class="alert succes" role="alert">
-                            {{ message }}
-                            <button title="close" type="button" class="close" data-dismiss="alert">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
-                        {% endif %}
-                        {% endwith %}
-                        <script>
                         
-                            let alertButton = document.querySelector('.close')
-                            let alert = document.querySelector('body')
-                
-                            let closeActive = () => {
-                                alert.classList.toggle('dismiss');
-                            };
-                            alertButton.addEventListener('click', closeActive)
-                        </script>
-                    
-    
-        {% block content %} {% endblock %}
-       
-            <div class="footer">
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
+                        
+                                
+                    <div class="list">
+                        <div class="col">
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                        <div class="col">
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                        <div class="col">
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                    </div>
+                </header>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                {% if category == 'error' %}
+                                <div class="alert error" role="alert">
+                                    {{ message }}
+                                    <button title="close" type="button" class="close" data-dismiss="alert">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% else %}
+                                <div class="alert succes" role="alert">
+                                    {{ message }}
+                                    <button title="close" type="button" class="close" data-dismiss="alert">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+                                <script>
+                                
+                                    let alertButton = document.querySelector('.close')
+                                    let alert = document.querySelector('body')
+                        
+                                    let closeActive = () => {
+                                        alert.classList.toggle('dismiss');
+                                    };
+                                    alertButton.addEventListener('click', closeActive)
+                                </script>
+                            
+            
+                    {% block content %} {% endblock %}
                 </div>
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                </div>
-                <div class="col">
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                    <a>bean</a>
-                </div>
-                <p>&copy; 2022 COPYRIGHT MAASTRICHT SCIENCE PROGRAMME</p>
+                    <div class="footer">
+                        <div class="col">
+                            <a href="/selection">Course Selection</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                        <div class="col">
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                        <div class="col">
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                            <a>test</a>
+                        </div>
+                        <p>&copy; 2022 COPYRIGHT MAASTRICHT SCIENCE PROGRAMME</p>
+                    </div>
             </div>
         </body>
 </html>

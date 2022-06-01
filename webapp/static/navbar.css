@@ -55,6 +55,7 @@ a.icon{
     margin-right: 1em;
     margin-top: 0%;
     height: 2.5em;
+    line-height: 2em;
     width: 2.5em;
 }
 @media screen and (max-width:600px) {

@@ -1,11 +1,5 @@
 
 
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-}
 
 header {
     height: 2em;
@@ -21,9 +15,9 @@ body {
     );
     background-size: 400% 400%;
     animation: animated-background 10s infinite ease-in-out;
-    padding: 0;
   
 }
+
 @keyframes animated-background {
     0%{
         background-position: 0 50%;

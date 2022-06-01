@@ -6,6 +6,14 @@ html, body {
     width: 100%;
 }
 
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 250pt;
+}
 .list{
     top: 4em;
     position: absolute;
@@ -13,14 +21,14 @@ html, body {
 
 @keyframes unfoldfoot {
     from {height: 0px;}
-    to {height: auto;}  
+    to {height: 200pt;}  
 }
 
 .footer{
     position: absolute;
     display: block;
     bottom: 0em;
-    margin-bottom: 0ch;
+    margin-bottom: 0em;
     margin-top: 3em;
     animation-name: unfoldfoot;
     animation-duration: 1s;
@@ -31,19 +39,21 @@ html, body {
 
 .list, .footer{
     left: 0;
-    background-color: rgb(255, 251, 251);
+    background-color: rgb(255, 255, 255);
     padding: 0em;
     border-bottom-left-radius: 5pt;
     border-bottom-right-radius: 5pt;
     height: 0px;
+    text-align: center;
     width: 100vw;
     line-height: 21pt;
     overflow: hidden;
-    flex-direction: row
+    
 }
-.list .col, .footer .col{
+.list .col, .footer .col, .sel .col{
     display: inline-block;
     width: 30%;
+    padding-top: 1em;
     text-align: center;
     height: 130pt;
     flex-direction: column;
@@ -57,6 +67,17 @@ html, body {
    letter-spacing: 0.2em;
    text-decoration: none;
 }
+.sel .col{
+    height: 25pt;
+    width: 23%;
+}
+.sel .col a{
+    display: block;
+   color: #333;
+   font-size: 10pt;
+   letter-spacing: 0.2em;
+   text-decoration: none;
+}
 .list a:hover, .footer a:hover {
     color: #333;
     font-weight: bold;
@@ -64,6 +85,9 @@ html, body {
     text-decoration: underline #333 0.1em;
 }
 
+.change form.selection, .open form.selection{
+    margin-top: 200pt;
+}
 @keyframes unfold {
     from {height: 0px;}
     to {height: 150pt;}  
