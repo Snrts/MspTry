@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"/>
         <link rel="stylesheet" href="{{ url_for('static', filename='Selection.css') }}"/>
-    
+       
         <style>
             html, body {
                 margin: 0;
@@ -46,6 +46,12 @@
             }
             .logout{
                 background: url(../static/images/logout.svg);
+                background-size: cover;
+
+            }
+
+            .delnote{
+                background: url(../static/images/delete.svg);
                 background-size: cover;
 
             }
@@ -168,6 +174,8 @@
                             
             
                     {% block content %} {% endblock %}
+                
+                <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
                 </div>
                     <div class="footer">
                         <div class="col">
