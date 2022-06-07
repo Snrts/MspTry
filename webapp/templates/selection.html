@@ -1,4 +1,5 @@
 {% extends "base.html"%}{%block title%}Selection{%endblock%}
+
         {%block content%}
         <form method="POST" class="selection">
 
@@ -9,7 +10,9 @@
             <div class="col"><a>COURSE 1 <br>{{ course.course1 }}</a></div>
             <div class="col"><a>COURSE 2 <br>{{ course.course2 }}</a></div>
             <div class="col"><a>SKILL <br>{{ course.skill }}</a></div>
-            </div>{% endfor %}
+            <button title="delete" type="button"  onclick="deleteSelect( {{ course.id }}) "><span aria-hidden="true">&times;</span></button>
+            </div>
+            {% endfor %}
             
             <label for="course1">label</label>
             <select name="course1" title="course1">
